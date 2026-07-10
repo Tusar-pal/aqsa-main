@@ -19,6 +19,12 @@
 </head>
 
 <body>
+
+    <audio id="birthdaySong" autoplay loop>
+        <source src="./music/HappyBirthday.mp3" type="audio/mp3">
+    </audio>
+
+
     <div id="wrapper">
         <div class="flag__birthday">
             <img src="./images/1.png" alt="" width="350" class="flag__left">
@@ -262,6 +268,73 @@
     close.addEventListener('click', function () {
         boxmail.classList.remove('active')
     })
+
+    // ❤️🌸 Background Falling Animation
+
+        function createFloating() {
+
+
+            let item =
+                document.createElement("div");
+
+
+            item.className = "floating";
+
+
+            let symbols = [
+                "Ranita",
+                "Happy",
+                "Birthday",
+                "❤️",
+                "🎂",
+                "💕",
+                "🥳"
+            ];
+
+
+            item.innerHTML =
+                symbols[
+                Math.floor(Math.random() * symbols.length)
+                ];
+
+
+
+            item.style.left =
+                Math.random() * 100 + "vw";
+
+
+            item.style.fontSize =
+                Math.random() * 20 + 15 + "px";
+
+
+            document.body.appendChild(item);
+
+
+
+            setTimeout(() => {
+
+                item.remove();
+
+            }, 6000);
+
+
+        }
+
+
+
+        setInterval(createFloating, 400);
+
+        // 🎵 Birthday Song Start
+
+            let birthdaySong =
+                document.getElementById("birthdaySong");
+
+
+            document.body.addEventListener("click", () => {
+
+                birthdaySong.play();
+
+            });
 </script>
 
 </html>
