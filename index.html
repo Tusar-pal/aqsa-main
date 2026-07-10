@@ -65,6 +65,9 @@
                         </div>
                     </button>
 
+                    <div id="memoryBox"></div>
+
+                    
                 </div>
             </div>
             <div class="right">
@@ -146,15 +149,18 @@
                     <div class="card2-content">
                         <h3>To You!</h3>
                         <h2>Happy Birthday Ranita ❤️🎂✨
-                        
-                        Wishing you a day filled with endless happiness, love, and beautiful moments. You are not just my best friend, you are
-                        someone who makes every memory more special. Thank you for always being there, for the laughter, support, and all the
-                        unforgettable moments we share. 💫
-                        
-                        May your life always be filled with success, smiles, and everything your heart dreams of. Keep shining, keep smiling,
-                        and never stop being the amazing person you are. 🌸
-                        
-                        Have the most wonderful birthday, Ranita! 🥳💖
+
+                            Wishing you a day filled with endless happiness, love, and beautiful moments. You are not
+                            just my best friend, you are
+                            someone who makes every memory more special. Thank you for always being there, for the
+                            laughter, support, and all the
+                            unforgettable moments we share. 💫
+
+                            May your life always be filled with success, smiles, and everything your heart dreams of.
+                            Keep shining, keep smiling,
+                            and never stop being the amazing person you are. 🌸
+
+                            Have the most wonderful birthday, Ranita! 🥳💖
 
                         </h2>
 
@@ -271,67 +277,111 @@
 
     // ❤️🌸 Background Falling Animation
 
-        function createFloating() {
+    function createFloating() {
 
 
-            let item =
-                document.createElement("div");
+        let item =
+            document.createElement("div");
 
 
-            item.className = "floating";
+        item.className = "floating";
 
 
-            let symbols = [
-                "Ranita",
-                "❤️",
-                "💕"
-                
+        let symbols = [
+            "Ranita",
+            "❤️",
+            "💕"
+
+        ];
+
+
+        item.innerHTML =
+            symbols[
+            Math.floor(Math.random() * symbols.length)
             ];
 
 
-            item.innerHTML =
-                symbols[
-                Math.floor(Math.random() * symbols.length)
-                ];
+
+        item.style.left =
+            Math.random() * 100 + "vw";
+
+
+        item.style.fontSize =
+            Math.random() * 20 + 15 + "px";
+
+
+        document.body.appendChild(item);
 
 
 
-            item.style.left =
-                Math.random() * 100 + "vw";
+        setTimeout(() => {
+
+            item.remove();
+
+        }, 6000);
 
 
-            item.style.fontSize =
-                Math.random() * 20 + 15 + "px";
-
-
-            document.body.appendChild(item);
+    }
 
 
 
-            setTimeout(() => {
+    setInterval(createFloating, 400);
 
-                item.remove();
+    // 🎵 Birthday Song Start
 
-            }, 6000);
+    let birthdaySong =
+        document.getElementById("birthdaySong");
 
 
+    document.body.addEventListener("click", () => {
+
+        birthdaySong.play();
+
+    });
+
+
+    /*----------------------------------------*/
+
+    // 💖 Button niche Memory Popup
+
+    let memories = [
+        "Happy Birthday Ranita 🎂💖",
+        "May all your dreams come true ✨🌸",
+        "Keep smiling and shining always 🦋",
+        "Wishing you endless happiness 💕",
+        "You deserve all the love today 🎀",
+        "Another year of your beautiful journey 🌈",
+        "Stay blessed, stay amazing Ranita ❤️",
+        "Cheers to your special day 🥳🎉",
+        "A day as beautiful as your smile 🌷",
+        "Forever grateful for our friendship 💫"
+    ];
+
+    let memoryIndex = 0;
+
+    function showMemory() {
+
+        let box =
+            document.getElementById("memoryBox");
+
+        box.innerHTML =
+            `<div class="memoryText">
+        ${memories[memoryIndex]}
+    </div>`;
+
+
+        memoryIndex++;
+
+        if (memoryIndex >= memories.length) {
+            memoryIndex = 0;
         }
 
+    }
 
 
-        setInterval(createFloating, 400);
+    setInterval(showMemory, 5000);
 
-        // 🎵 Birthday Song Start
-
-            let birthdaySong =
-                document.getElementById("birthdaySong");
-
-
-            document.body.addEventListener("click", () => {
-
-                birthdaySong.play();
-
-            });
+    showMemory();
 </script>
 
 </html>

@@ -1137,3 +1137,52 @@ body {
     opacity: 0;
   }
 }
+
+
+#memoryBox{
+    margin-top:25px;
+    height:60px;          /* fixed space */
+    width:390px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:'Dancing Script', cursive;
+    font-size:26px;
+    color:#ff4f9a;
+
+    text-align:center;
+    text-shadow:0 0 8px #ff9acb;
+
+    overflow:hidden;     /* size change korbe na */
+}
+
+.btn{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.memoryText{
+    animation: memoryPop 1s ease;
+}
+
+@keyframes memoryPop{
+
+    0%{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    50%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
