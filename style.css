@@ -118,6 +118,10 @@ body {
   transform: scale(1);
   transition: all 0.5s ease-in-out;
 }
+
+.username{
+  font-family: "Sriracha", cursive;
+}
 #btn__letter:active {
   transform: scale(0.7);
 }
@@ -1186,3 +1190,100 @@ body {
     }
 }
 
+
+
+#startBtn {
+    position: fixed;
+    top: 50%;
+    left: 46%;
+
+    padding: 18px 45px;
+    border: none;
+    border-radius: 50px;
+
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+
+    background: linear-gradient(135deg, #ff4d8d, #ff9acb);
+
+    cursor: pointer;
+    z-index: 9999;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 10px 30px rgba(255, 77, 141, 0.5);
+
+    animation: floating 3s ease-in-out infinite,
+               glow 2s ease-in-out infinite;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.5s ease;
+}
+
+
+/* Hover Effect */
+#startBtn:hover {
+
+    transform:
+    translate(-50%, -50%)
+    scale(1.08);
+}
+
+
+/* Smooth up-down movement */
+@keyframes floating {
+
+    0% {
+        transform:
+        translate(-50%, -50%)
+        translateY(0);
+    }
+
+    50% {
+        transform:
+        translate(-50%, -50%)
+        translateY(-12px);
+    }
+
+    100% {
+        transform:
+        translate(-50%, -50%)
+        translateY(0);
+    }
+}
+
+
+/* Soft glowing */
+@keyframes glow {
+
+    0% {
+        box-shadow:
+        0 0 15px #ff6fae;
+    }
+
+    50% {
+        box-shadow:
+        0 0 35px #ff6fae,
+        0 0 60px #ffd1e6;
+    }
+
+    100% {
+        box-shadow:
+        0 0 15px #ff6fae;
+    }
+}
+
+
+/* click korar por class add hobe */
+#startBtn.hide {
+    opacity: 0;
+
+    transform:
+    translate(-50%, -50%)
+    scale(0.5);
+
+    pointer-events: none;
+}
